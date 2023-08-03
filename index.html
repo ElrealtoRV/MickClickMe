@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>JAVASCRIPT</title>
+</head>
+<style>
+    .btn1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 20px 10px 20px 10px;
+  width: 200px;
+  height: 100px;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  color: rgb(255, 255, 255);
+  background-color: #110101;
+  border: none;
+  cursor: pointer;
+ 
+}
+
+.heart {
+  position: absolute;
+  transform: scale(0);
+  animation: fallHeart 3s linear infinite;
+}
+@keyframes fallHeart {
+  0% {
+    transform: translateY(-100px) scale(0) rotate(0deg); /* Added rotate(0deg) */
+  }
+  50% {
+    transform: translateY(calc(100vh + 100px)) scale(1.5) rotate(-45deg); /* Added rotate(-45deg) and scale(1.5) */
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) scale(1) rotate(0deg); /* Added rotate(0deg) */
+  }
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  border-radius: 50px 50px 0 0;
+  background-color: #f90000;
+}
+
+body::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+body::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+</style>
+<body>
+    <div>
+        <button onclick="showAlertAndHearts()" class="btn1">Click Me!</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
